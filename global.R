@@ -11,7 +11,7 @@ prototype <- data.frame(date = character(), time = character(),
   r_os = character(), package = character(), version = character(),
   country = character(), ip_id = character(), received = numeric())
 
-#Time counter - test
+#Time counter
 remainTime <- 7000
 
 # Connects to streaming log data for cran.rstudio.com and
@@ -62,7 +62,7 @@ downloadCount <- function(pkgStream) {
 # Count the total nrows of pkgStream
 timeRemain <- function(pkgStream,timeWindow) {
   shinySignals::reducePast(pkgStream, function(memo, value) {
-      return(remainTime-timeWindow)
+      return(remainTime - as.numeric(Sys.time()) - timeWindow)
   }, 0)
 }
 
