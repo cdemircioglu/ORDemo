@@ -8,3 +8,4 @@
 "zzz"
 "test cron"
 "test after an hour"
+"test chown test"
