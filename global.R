@@ -58,8 +58,8 @@ downloadCount <- function(pkgStream) {
 
 # Count the total nrows of pkgStream
 timeRemain <- function(pkgStream,timeWindow) {
-  shinySignals::reducePast(pkgStream, function() {
-    return(as.numeric(Sys.time()) - timeWindow)
+  shinySignals::reducePast(pkgStream, function(memo, value) {
+      return(as.numeric(Sys.time()) - timeWindow)
   }, 0)
 }
 
