@@ -74,7 +74,7 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   output$count <- renderValueBox({
     valueBox(
       value = dlCount(),
-      subtitle = "Total rows processed",
+      subtitle = "Time to complete",
       icon = icon("clock-o")
     )
   })
