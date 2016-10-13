@@ -68,7 +68,8 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
       value = formatC(downloadRate, digits = 1, format = "f"),
       subtitle = "Percent completed",
       icon = icon("percent"),
-      color = if (downloadRate >= input$rateThreshold) "yellow" else "aqua"
+      #color = if (downloadRate >= input$rateThreshold) "yellow" else "aqua"
+      color = "yellow" 
     )
   })
   
