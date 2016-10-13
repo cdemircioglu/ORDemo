@@ -56,6 +56,14 @@ downloadCount <- function(pkgStream) {
   }, 0)
 }
 
+# Count the total nrows of pkgStream
+timeRemain <- function(pkgStream,timeWindow) {
+  shinySignals::reducePast(pkgStream, function() {
+    return(as.numeric(Sys.time()) - timeWindow))
+  }, 0)
+}
+
+
 # Server cost the total nrows of pkgStream
 serverCost <- function(pkgStream,numserver) {
   shinySignals::reducePast(pkgStream, function(memo, df) {

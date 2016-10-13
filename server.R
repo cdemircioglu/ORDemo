@@ -55,7 +55,8 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   # Record the time that the session started.
   startTime <- as.numeric(Sys.time())
 
-   
+  tmRemain <- timeRemain(pkgStream,startTime)
+     
   
   output$rate <- renderValueBox({
     # The downloadRate is the number of rows in pkgData since
@@ -73,7 +74,7 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   
   output$count <- renderValueBox({
     valueBox(
-      value = dlCount(),
+      value = tmRemain(),
       subtitle = "Time to complete",
       icon = icon("clock-o")
     )
