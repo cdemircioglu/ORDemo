@@ -11,8 +11,6 @@ prototype <- data.frame(date = character(), time = character(),
   r_os = character(), package = character(), version = character(),
   country = character(), ip_id = character(), received = numeric())
 
-#Time counter
-remainTime <- 7000
 
 # Connects to streaming log data for cran.rstudio.com and
 # returns a reactive expression that serves up the cumulative
