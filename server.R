@@ -32,7 +32,6 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   # new package download data; up to once a second it may return a
   # data frame of new downloads since the last update.
   pkgStream <- packageStream(session)
-  inpStream <- inputStream(input)
   
   # Max age of data (5 minutes)
   maxAgeSecs <- 60 * 5
@@ -58,8 +57,7 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   # Record the time that the session started.
   startTime <- as.numeric(Sys.time())
 
-  #tmRemain <- timeRemain(pkgStream,startTime,input$rateThreshold)
-  tmRemain <- userColor(inpStream)
+  tmRemain <- timeRemain(pkgStream,startTime,input$rateThreshold)
   
      
   
