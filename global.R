@@ -64,7 +64,7 @@ timeRemain <- function(pkgStream,timeWindow,servercnt) {
   #  remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
   #  return(remainTime)
   #}, 0)
-  return (as.numeric(Sys.time())-timeWindow)
+  return (as.numeric(Sys.time())-timeWindow*servercnt)
 }
 
 
