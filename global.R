@@ -76,14 +76,30 @@ serverCost <- function(pkgStream,numserver) {
   },0)
 }
 
-userColor <- function() {
+
+
+userColor <- function(inputStream) {
   total <- 0
   reactive({
     total <<- total + 1
   })
   total
 }
+
+
+# Connects to streaming log data for cran.rstudio.com and
+# returns a reactive expression that serves up the cumulative
+# results as a data frame
+inputStream <- function(input) {
+
+  # Returns new lines
+  newLines <- reactive({
+    input
+  })
   
+}
+
+
 
 
 
