@@ -76,10 +76,10 @@ serverCost <- function(pkgStream,numserver) {
   },0)
 }
 
-userColor <- function(ccc) {
+userColor <- function() {
   total <- 0
   reactive({
-    total <- total + ccc
+    total <- total + 1
   })
   total
 }
