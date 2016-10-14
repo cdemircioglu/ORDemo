@@ -66,6 +66,13 @@ timeRemain <- function(pkgStream,timeWindow,servercnt) {
   }, 0)
 }
 
+# Count the total nrows of pkgStream
+timeRemain2 <- function(timeWindow,servercnt) {
+    remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
+    return(remainTime)
+}
+
+
 
 # Server cost the total nrows of pkgStream
 serverCost <- function(pkgStream,numserver) {
