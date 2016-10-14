@@ -59,7 +59,7 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   startTime <- as.numeric(Sys.time())
 
   #tmRemain <- timeRemain(pkgStream,startTime,input$rateThreshold)
-  tmRemain <- userColor()
+  tmRemain <- userColor(inpStream)
   
      
   
