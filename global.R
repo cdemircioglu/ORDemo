@@ -81,7 +81,7 @@ userColor <- function() {
   reactive({
     total <- total + 1
   })
-  total
+  return(total)
 }
   
 
