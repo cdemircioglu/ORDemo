@@ -75,7 +75,7 @@ cx <- function (n, h = c(-243, 360), c = 91, l = c(61, 77), power = 0.8333333333
   })
   
   output$count <- renderValueBox({
-    currentServerCnt   <- as.numeric(input$rateThreshold)
+    currentServerCnt   <- max(srvCost(), input$rateThreshold*1.50)
     
     valueBox(
       value = currentServerCnt,
