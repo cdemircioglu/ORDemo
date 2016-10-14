@@ -9,3 +9,4 @@
 "test cron"
 "test after an hour"
 "test chown test"
+"test after delete"
