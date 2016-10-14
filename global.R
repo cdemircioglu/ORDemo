@@ -60,11 +60,10 @@ downloadCount <- function(pkgStream) {
 
 # Count the total nrows of pkgStream
 timeRemain <- function(pkgStream,timeWindow,servercnt) {
-  #shinySignals::reducePast(pkgStream, function(memo, value) {
-  #  remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
-  #  return(remainTime)
-  #}, 0)
-  return (as.numeric(Sys.time())-timeWindow*servercnt)
+  shinySignals::reducePast(pkgStream, function(memo, value) {
+    remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
+    return(remainTime)
+  }, 0)
 }
 
 
