@@ -66,15 +66,6 @@ timeRemain <- function(pkgStream,timeWindow,servercnt) {
   }, 0)
 }
 
-# Count the total nrows of pkgStream
-timeRemain2 <- function(timeWindow,servercnt) {
-  shinySignals::reducePast(function(memo, value) {
-    remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
-    return(remainTime)
-  }, 0)
-}
-
-
 
 # Server cost the total nrows of pkgStream
 serverCost <- function(pkgStream,numserver) {
@@ -84,6 +75,15 @@ serverCost <- function(pkgStream,numserver) {
     1
   },0)
 }
+
+userColor <- function(ccc) {
+  total <- 0
+  reactive({
+    total <- total + ccc
+  })
+  total
+}
+  
 
 
 
