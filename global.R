@@ -68,7 +68,7 @@ timeRemain <- function(pkgStream,timeWindow,servercnt) {
 
 # Count the total nrows of pkgStream
 timeRemain2 <- function(timeWindow,servercnt) {
-  shinySignals::reducePast(pkgStream, function(memo, value) {
+  shinySignals::reducePast(function(memo, value) {
     remainTime <- remainTime - (as.numeric(Sys.time()) - timeWindow)*servercnt
     return(remainTime)
   }, 0)
